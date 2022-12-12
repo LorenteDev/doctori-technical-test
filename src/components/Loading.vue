@@ -24,8 +24,8 @@ export default defineComponent({
   height: 120px;
   margin: 8px;
   border-radius: 50%;
-  border: 20px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border: 20px solid #101e38;
+  border-color: #101e38 transparent #101e38 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
