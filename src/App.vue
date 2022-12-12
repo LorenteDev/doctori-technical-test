@@ -5,6 +5,10 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Lato');
 
+body {
+  margin: 0;
+}
+
 #app {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
