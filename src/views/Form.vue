@@ -1,5 +1,7 @@
 <template>
-  <section id="form-container">
+  <section
+    v-if="!loading"
+    id="form-container">
     <section id="form">
       <h1>Tu seguro de coche al mejor precio</h1>
       <h2>Buscamos por ti entre los mejores seguros y servicios</h2>
@@ -32,10 +34,9 @@
               disabled
               selected
               hidden>Marca de tu coche</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option
+              v-for="brand in brands"
+              :value="brand.id">{{ brand.name }}</option>
           </select>
         </div>
         <div id="terms">
@@ -53,12 +54,21 @@
       </form>
     </section>
   </section>
+  <section
+    v-else
+    id="loading">
+    Loading...
+  </section>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Form',
   data: () => ({
+    loading: false,
+    brands: [],
     form: {
       name: '',
       phone: '',
@@ -70,7 +80,29 @@ export default {
   methods: {
     send () {
       console.log(this.form)
+    },
+    loadBrands () {
+      this.loading = true
+      axios({
+          method: 'get',
+          url: `https://www.doctori.com/coche/brands`,
+          headers: {
+            Authentication: '48NkpNZfYNOaefCGCTXcWXngT7EEhiQf1hMxaXpE9TYqMqtcttIqbnxW0sQG1mM8ZgzeV0TEyhn'
+          }
+        })
+        .then(res => {
+          this.brands = res.data.brands
+        })
+        .catch(err => {
+          console.error(err)
+        })
+        .finally(() => {
+          this.loading = false
+        })
     }
+  },
+  beforeMount() {
+    this.loadBrands()
   }
 }
 </script>
