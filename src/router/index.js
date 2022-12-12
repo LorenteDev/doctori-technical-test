@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Form from '../views/Form.vue'
+import Results from '../views/Results.vue'
 
 const routes = [
   {
     path: '/',
     name: 'form',
     component: Form
-  }
+  },
+  {
+    path: '/results',
+    name: 'results',
+    component: Results
+  },
 ]
 
 const router = createRouter({
