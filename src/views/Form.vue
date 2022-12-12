@@ -5,7 +5,7 @@
     <section id="form">
       <h1>Tu seguro de coche al mejor precio</h1>
       <h2>Buscamos por ti entre los mejores seguros y servicios</h2>
-      <form v-on:submit.prevent="send()">
+      <form v-on:submit.prevent="goToResults()">
         <div class="input-container">
           <input
             type="text"
@@ -78,8 +78,8 @@ export default {
     }
   }),
   methods: {
-    send () {
-      console.log(this.form)
+    goToResults () {
+      this.$router.push('/results')
     },
     loadBrands () {
       this.loading = true
@@ -99,7 +99,7 @@ export default {
         .finally(() => {
           this.loading = false
         })
-    }
+    },
   },
   beforeMount() {
     this.loadBrands()
