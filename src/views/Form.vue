@@ -54,18 +54,18 @@
       </form>
     </section>
   </section>
-  <section
-    v-else
-    id="loading">
-    Loading...
-  </section>
+  <Loading v-else/>
 </template>
 
 <script>
 import axios from 'axios'
+import Loading from '@/components/Loading.vue'
 
 export default {
   name: 'Form',
+  components: {
+    Loading
+  },
   data: () => ({
     loading: false,
     brands: [],
