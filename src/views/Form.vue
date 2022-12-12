@@ -110,6 +110,7 @@ export default {
 <style scoped>
 #form-container {
   background: #0098d9;
+  margin-top: 20px;
 }
 #form {
   color: white;
