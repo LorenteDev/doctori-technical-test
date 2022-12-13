@@ -95,6 +95,28 @@ export default {
         })
         .catch(err => {
           console.error(err)
+          this.brands = [
+            {
+              id: "00097033-9191-5efd-95ad-d843250d322a",
+              name: "AUDI"
+            },
+            {
+              id: "00f248c9-06c5-524f-9be4-5747c71861b3",
+              name: "BMW"
+            },
+            {
+              id: "019f672d-cfd2-510d-a761-871684442440",
+              name: "RENAULT"
+            },
+            {
+              id: "022f02dc-dcc5-5059-a769-a462498aefde",
+              name: "PEUTGEOT"
+            },
+            {
+              id: "023280b6-d246-5853-8ab6-edde45f85dab",
+              name: "OTRA"
+            }
+          ]
         })
         .finally(() => {
           this.loading = false
