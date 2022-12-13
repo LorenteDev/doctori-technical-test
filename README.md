@@ -1,19 +1,18 @@
-# doctori-technical-test
+# Prueba técnica Doctor i
 
-## Project setup
+Para inicializar este proyecto es necesario tener instalado [Node.js](https://nodejs.org/en/) y npm.
+
+## Instalación del proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar y hot-reload para desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila para producción
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
